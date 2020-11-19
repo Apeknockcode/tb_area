@@ -17,5 +17,10 @@ module.exports = {
       .tap(options => {
         return options;
       });
+  },
+  configureWebpack: {
+    output: {
+      libraryExport: 'default'
+    }
   }
 };

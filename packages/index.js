@@ -3,7 +3,6 @@ import Address from "./Address/address.vue";
 const com =[Address];
 const install = function(Vue) {
   com.forEach(item => {
-    console.log(item)
     Vue.component(item.name, item);
   });
 };

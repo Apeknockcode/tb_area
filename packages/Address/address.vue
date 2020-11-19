@@ -191,7 +191,6 @@ export default {
       }
     },
     areaParent(value) {
-      console.log("areaParent", value);
       this.area = value;
       this.initialArea = value;
     }
@@ -315,9 +314,9 @@ export default {
       } else if (that.index == 3) {
         that.address.street = item;
         that.index = 4;
+         that.closeBtn();
       } else if (that.index == 4) {
         that.address.street = item;
-        that.index = 4;
       }
     },
     closeBtn() {
