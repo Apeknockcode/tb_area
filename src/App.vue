@@ -1,20 +1,46 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <Address :tbState="openAddressState" @closeTbModel="closeTbModel" />
+    <button @click="openAddress">打开地址</button>
   </div>
 </template>
+<script>
+import Address from "./components/Address/address";
+export default {
+  data() {
+    return {
+      openAddressState: false
+    };
+  },
+  components: {
+    Address
+  },
+  methods: {
+    // 打开地址
+    openAddress() {
+      this.openAddressState = true;
+    },
+    // 关闭地址
+    closeTbModel(data) {
+      this.openAddressState = data.state;
+      console.log(data.address);
+    }
+  }
+};
+</script>
 
 <style lang="less">
+* {
+  padding: 0px;
+  margin: 0px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100vh;
 }
 
 #nav {
