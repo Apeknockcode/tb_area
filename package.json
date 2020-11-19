@@ -1,6 +1,6 @@
 {
   "name": "tb_area",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "private": false,
   "main":"dist/tb_area.umd.min.js",
   "scripts": {

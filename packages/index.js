@@ -1,10 +1,9 @@
 // 整个包的一个入口
 import Address from "./Address/address.vue";
-const components = {
-  Address
-};
+const com =[Address];
 const install = function(Vue) {
-  components.forEach(item => {
+  com.forEach(item => {
+    console.log(item)
     Vue.component(item.name, item);
   });
 };
