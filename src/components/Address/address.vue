@@ -270,6 +270,7 @@ export default {
       if (that.index != 3 && that.index != 4) {
         if (item.children.length == 0) {
           //   console.log("下面没有数据了");
+          that.closeBtn();
         }
         that.area = item.children ? item.children : that.closeBtn();
       }
