@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <Address :tbState="openAddressState" @closeTbModel="closeTbModel" />
+    <Address
+      :areaParent="areaParamer"
+      :tbState="openAddressState"
+      @closeTbModel="closeTbModel"
+    />
     <button @click="openAddress">打开地址</button>
   </div>
 </template>
 <script>
+import area from "./assets/area.js";
 import Address from "./components/Address/address";
 export default {
   data() {
     return {
-      openAddressState: false
+      openAddressState: false,
+      areaParamer: []
     };
   },
+  created() {},
   components: {
     Address
   },
@@ -19,6 +26,7 @@ export default {
     // 打开地址
     openAddress() {
       this.openAddressState = true;
+      this.areaParamer = area;
     },
     // 关闭地址
     closeTbModel(data) {
