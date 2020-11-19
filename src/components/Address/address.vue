@@ -190,9 +190,6 @@ export default {
       if (value) {
         this.SizeHeight();
       }
-    },
-    index(value) {
-      console.log("监听index的变化", value);
     }
   },
   computed: {},
@@ -210,7 +207,6 @@ export default {
       }, 100);
     },
     bandArea(difference) {
-      console.log(difference);
       let UserChangeName = this.$refs[difference].innerText;
       let initialArea = this.initialArea;
       // 筛选数据
@@ -272,10 +268,8 @@ export default {
     handAreaList(item) {
       var that = this;
       if (that.index != 3 && that.index != 4) {
-        console.log("that.index", that.index);
-        console.log("item.children", item.children);
         if (item.children.length == 0) {
-          console.log("下面没有数据了");
+          //   console.log("下面没有数据了");
         }
         that.area = item.children ? item.children : that.closeBtn();
       }
@@ -285,7 +279,6 @@ export default {
     setAddress(item) {
       var that = this;
       if (that.index == 0) {
-        console.log("点击之前的 that.address 的值", that.address.province);
         if (that.address.province.label != "请选择省份/地区") {
           that.address = {
             province: {
@@ -324,7 +317,6 @@ export default {
         that.address.street = item;
         that.index = 4;
       }
-      console.log(that.address);
     },
     closeBtn() {
       this.$emit("closeTbModel", { state: false, address: this.address });
